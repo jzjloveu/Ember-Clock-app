@@ -1,0 +1,21 @@
+<div id="worldcity">
+  <header style="background-color:white">
+    <h2>
+    	<p class="addtitle">Choose a City.<p>
+	     {{view 'search-input' class='citysearch' value=searchVal}}
+	     {{#link-to 'worldclock' class="cancel"}}Cancel{{/link-to}}
+    </h2>
+  </header>
+  {{#if cachedCities}}
+		<ul class="city-list">
+			{{#each city in cachedCities}}
+				{{show-index city.cityName}}
+				<li>
+				  <a href='' {{action 'addCity' city}}><p class="city">{{city.cityName}}</p></a>
+				</li>
+			{{/each}}
+		</ul>
+  {{else}}
+		<div class='notice'><span>{{notice}}</span></div>
+  {{/if}}
+</div>

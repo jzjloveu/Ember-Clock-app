@@ -1,0 +1,424 @@
+@lightGray: #efefef;
+@borderColor: #ccc;
+
+
+html {
+  background: @lightGray;
+}
+
+* {
+ font-family: "HelveticaNeue-Light", Arial;
+ margin:0px;
+ padding:0px;
+}
+
+input, button {
+  outline: none;
+}
+
+header {
+  z-index:2;
+  top:0px;
+  width: 100%;
+  background-color: @lightGray;
+  height: 64px;
+  position: fixed;
+  border-bottom: 1px solid @borderColor;
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+
+    a.eidt{
+      color: red;
+      left: 10px;
+      font-weight: normal;
+      position: fixed;
+      text-decoration: none;
+    }
+
+    a.plus{
+      color: red;
+      top: 10px;
+      right: 10px;
+      font-size: 33px;
+      font-weight: normal;
+      position: fixed;
+      text-decoration: none;
+    }
+  }
+  h2 {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 14px;
+
+    .addtitle{
+      top: 10px;
+      font-weight: normal;
+    }
+
+    a.cancel {
+      color: red;
+      top: 30px;
+      right: 10px; 
+      font-size: 20px;
+      font-weight: normal;
+      position: fixed;
+      text-decoration: none;
+    }
+
+    .citysearch{
+      top: 30px;
+      left: 10px;
+      padding: 3px 5px 2px 5px;
+      font-size: 14px;
+      font-weight: normal;
+      width: 75%;
+      height: 22px;
+      background-color: @lightGray;
+      border: none;
+      position: fixed;
+    }
+  }
+}
+
+footer {
+  z-index: 2;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 44px;
+  border-top: 1px solid @borderColor;
+  background: @lightGray;
+
+  ul {
+    margin-top: 7px;
+    li {
+      display:inline;
+      float: left;
+      width: 33%;
+      text-align: center;
+
+      a {
+        color: #aaa;
+        text-decoration: none;
+        font-size: 12px;
+
+        &.active {
+          color: red;
+        }
+
+        span {
+          font-size:25px;
+          line-height: 0px;
+        }
+      }
+    }
+  }
+}
+
+ul.worldclock-list {
+  margin-top: 64px;
+  width:100%;
+  height: auto;
+  padding-left:0px;
+  list-style: none;
+  z-index: 1;
+  padding-bottom: 44px;
+  li {
+    position: relative;
+    height: 90px;
+    border-bottom: 1px solid @borderColor;
+    background: white;
+    
+    p {
+      position: absolute;
+    }
+    
+    p.city {
+      font-size: 30px;
+      left: 10px;
+      top: 15px;
+      transition: left 0.2s linear;
+    }
+
+    p.time-details {
+      font-size: 16px;
+      left: 10px;
+      top: 55px;
+      transition: left 0.2s linear;
+    }
+
+    p.city-right{
+      font-size: 30px;
+      left: 40px;
+      top: 15px;
+      transition: left 0.2s linear;
+    }
+    p.time-details-right {
+      font-size: 16px;
+      left: 40px;
+      top: 55px;
+      transition: left 0.2s linear;
+    }
+
+    p.time {
+      font-size: 25px;
+      right: 10px;
+      top: 15px;
+      opacity: 1;
+      transition: visibility 0.3s linear;
+    }
+
+    p.timeface {
+      font-size: 25px;
+      right: 10px;
+	    top: 10px;
+      opacity: 1;
+      transition: visibility 0.3s linear;
+    }
+
+    p.time-hide {
+      font-size: 25px;
+      right: 10px;
+      top: 15px;
+      opacity: 0;
+      transition: opacity 0.3s linear;
+    }
+    
+    p.timeface-hide {
+      font-size: 25px;
+      right: 10px;
+      top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s linear;
+    }
+
+  }
+}
+
+ul.city-list {
+  margin-top: 64px;
+  width:100%;
+  height: auto;
+  padding-left:0px;
+  list-style: none;
+  z-index: 1;
+  padding-bottom: 44px;
+  li {
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid @borderColor;
+    background: white;
+
+    p {
+      position: absolute;
+    }
+    
+    p.city {
+      font-size: 18px;
+      left: 10px;
+      top: 8px;
+    }
+  }
+  li.index {
+      position: relative;
+      height: 21px;
+      border-bottom: 1px solid @borderColor;
+      background-color: #efefef;
+
+    p.letter{
+      position: absolute;
+      left: 10px;
+      top: 2px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+.buttons {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  button {
+    top: 20px;
+    position: absolute;
+    border-width: 1px;
+    border-style: solid;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    background-color: white;
+    font-size: 15px;
+
+    &:first-child {
+      left:33%;
+      margin-left: -40px;
+    }
+    &:last-child {
+      left: 66%;
+      margin-left: -40px;
+    }
+
+    &.button-stop, &.button-cancel {
+      border-color: red;
+      color: red;
+    }
+
+    &.button-start {
+      border-color: green;
+      color: green;
+    }
+
+    &.button-pause, &.button-lap, &.button-reset {
+      border-color: black;
+      color: black;
+    }
+
+    &:disabled {
+      border-color: gray;
+      color: gray;
+    }
+
+
+  }
+
+}
+
+
+div.counter {
+  height: 160px;
+  background: white;
+  border-bottom: 1px solid @borderColor;
+  position: relative;
+
+  p {
+    position: absolute;
+  }
+
+  p.lap-time {
+    color: #ccc;
+    font-size: 18px;
+    right: 10px;
+    top: 10px;
+  }
+
+  p.total-time {
+    font-family: "HelveticaNeue-UltraLight", Arial;
+    font-size: 70px;
+    top: 45px;
+    left:0px;
+    right:0px;
+    text-align: center;
+  }
+}
+
+div.stopwatch-content {
+  top: 64px;
+  position: absolute;
+  width:100%;
+  bottom: 0px;
+  padding-left:0px;
+  list-style: none;
+  z-index: 1;
+  background-color: @lightGray;
+  overflow: hidden;
+
+
+  ul.laps {
+    border-top: 1px solid @borderColor;
+    position: absolute;
+    top:281px;
+    bottom:44px;
+    width: 100%;
+    overflow-y: scroll;
+    li {
+      position: relative;
+      height: 40px;
+      border-bottom: 1px solid @borderColor;
+
+      p {
+        position: absolute;
+      }
+
+      p.lap-label {
+        font-size: 18px;
+        color: #555;
+        left: 10px;
+        top: 10px;
+      }
+
+      p.lap-time {
+        font-size: 22px;
+        right: 20%;
+        top: 10px;
+      }
+    }
+  }
+}
+
+div.timer-content {
+  top: 64px;
+  position: absolute;
+  width:100%;
+  bottom: 0px;
+  padding-left:0px;
+  list-style: none;
+  z-index: 1;
+  background-color: @lightGray;
+  overflow: hidden;
+
+  div.inputs {
+    postion: relative;
+    height: 160px;
+    border-bottom: 1px solid @borderColor;
+    input {
+      height: 160px;
+      background: white;
+      position: relative;
+      width: 50%;
+      float:left;
+      border:0px;
+      font-size: 90px;
+      text-align: center;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background: red;
+  top: 30px;
+  left: 12px;
+  position: relative;
+}
+
+#dash {
+  border-bottom: 1px solid;
+  border-left: 14px solid;
+  border-top: 1px solid;
+  border-left: 14px solid;
+  top: 9px;
+  left: 3px;
+  color: white;
+  position: absolute;
+}
+
+#worldcity {
+  background: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.notice {
+      text-align: center;
+      top: 235px;
+      font-size: 18px;
+      position: relative;
+}

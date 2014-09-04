@@ -1,0 +1,23 @@
+<div id="timer">
+  <header>
+    <h1>Timer</h1>
+  </header>
+  <div class="timer-content">
+    {{#if hideInputs}}
+      <div class="counter">
+        <p class="total-time">{{totalTime}}</p>
+      </div>
+    {{else}}
+      <div class="inputs">
+        {{input class="hours" type="number" max="100" min="0" value=hours}}
+        {{input class="minutes" type="number" max="59" min="0" value=minutes}}
+      </div>
+    {{/if}}
+    <div class="buttons">
+      <button class="button-start left-button" {{action 'leftButton'}}>{{leftButtonLabel}}</button>
+      <button class="button-lap right-button" {{action 'rightButton'}} {{bind-attr disabled=rightButtonDisabled}}>{{rightButtonLabel}}</button>
+    </div>
+  </div>
+</div>
+
+{{partial 'footer'}}
