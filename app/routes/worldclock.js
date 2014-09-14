@@ -21,6 +21,7 @@ var WorldclockRoute = Ember.Route.extend({
   },
    setupController: function(controller, model) {
      controller.set('content', model);
+     controller.propertyDidChange('content');
   }
 });
 

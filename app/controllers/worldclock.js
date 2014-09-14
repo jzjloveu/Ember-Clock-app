@@ -12,6 +12,10 @@ var WorldclockController = Ember.ArrayController.extend({
     this.updateCityInfo();
   }.observes('content'),
 
+  hasContent: function() {
+    return this.get('content').get('length') > 0;
+  }.property('content'),
+
   updateCityInfo: function() {
     // get this recordArray from promiseArray in route,
     // make recordArray into array
@@ -103,8 +107,11 @@ var WorldclockController = Ember.ArrayController.extend({
     },
 
     removeCity: function (city) {
+      var self = this;
       this.store.find('citylist',city.id).then(function(post){
           post.destroyRecord();
+      }).then(function() {
+        self.updateCityInfo();
       });
     }
   }

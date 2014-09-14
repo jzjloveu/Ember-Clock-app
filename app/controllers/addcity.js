@@ -33,7 +33,7 @@ var AddCityController = Ember.ArrayController.extend({
 		if(!keyword || keyword.length === 0) {
 			this.set('notice', 'Please type to find a city.');
 		}
-		else if(keyword.length === 1) {
+		else if(keyword.length <= 2) {
 			this.set('notice', 'Keep typing...');
 		}
 		else {

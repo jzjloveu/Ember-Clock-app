@@ -1,11 +1,13 @@
 <div id="worldclock">
   <header>
     <h1>
-        {{#if isEdit}}
-    		<a class="eidt" href="#" {{action 'showDone'}}><strong>Done</strong></a>
-    	{{else}}
-    		<a class="eidt" href="#" {{action 'showDone'}}>Edit</a>
-    	{{/if}}
+	    {{#if hasContent}}
+	        {{#if isEdit}}
+	    		<a class="eidt" href="#" {{action 'showDone'}}><strong>Done</strong></a>
+	    	{{else}}
+	    		<a class="eidt" href="#" {{action 'showDone'}}>Edit</a>
+	    	{{/if}}
+	    {{/if}}
     	World Clock
     	{{#link-to 'addcity' class="plus"}}+{{/link-to}}
     </h1>

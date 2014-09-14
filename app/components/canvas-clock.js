@@ -46,7 +46,7 @@ var CanvasClockComponent = Ember.Component.extend({
   setPara: function(width){
  	this.set('pi', Math.PI);
 	this.set('fontSize', width/8); 
-	this.set('armSize', width/36);
+	this.set('armSize', width/28);
 	this.set('armXOffset', width/5);
 	this.set('hrArmXOffset', width/11);
 	this.set('clockRadius', width/2);
