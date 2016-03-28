@@ -1,6 +1,6 @@
-# Todo-list
+# Ember-Clock-app
 
-This README outlines the details of collaborating on this Ember application.
+This README outlines the details of this Ember application.
 
 ## Installation
 
